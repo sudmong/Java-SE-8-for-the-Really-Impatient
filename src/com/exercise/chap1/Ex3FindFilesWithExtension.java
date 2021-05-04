@@ -40,8 +40,8 @@ public class Ex3FindFilesWithExtension {
 	
 	public static void printFilesLamda(File f, String extn)
 	{
-		File[] subdirectoris =  f.listFiles((file, name) ->name.endsWith(extn));
+		File[] filteredFiles =  f.listFiles((file, name) ->name.endsWith(extn));
 		
-		Stream.of(subdirectoris).filter(file -> !file.isDirectory()).forEach(System.out :: println);
+		Stream.of(filteredFiles).filter(file -> !file.isDirectory()).forEach(System.out :: println);
 	}
 }
